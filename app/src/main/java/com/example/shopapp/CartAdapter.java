@@ -41,7 +41,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         ItemModel item = cartList.get(position);
 
         holder.title.setText(item.getTitle());
-        holder.price.setText(String.format("$%.2f", item.getPrice()));
+        holder.price.setText(String.format("%.2f KM", item.getPrice()));
 
         int imageRes = context.getResources().getIdentifier(
                 item.getImagePath(),

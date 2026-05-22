@@ -29,7 +29,7 @@
       "Id": 0,
       "ImagePath": "orange",
       "LocationId": 1,
-      "Price": 5.5,
+      "Price": 2.5,
       "Star": 4.3,
       "Title": "Fresh orange"
     },
@@ -40,7 +40,7 @@
       "Id": 1,
       "ImagePath": "apple",
       "LocationId": 1,
-      "Price": 6.5,
+      "Price": 2.5,
       "Star": 4.5,
       "Title": "Fresh apple"
     },
@@ -51,7 +51,7 @@
       "Id": 2,
       "ImagePath": "watermelon",
       "LocationId": 1,
-      "Price": 5.1,
+      "Price": 10.0,
       "Star": 4.2,
       "Title": "Fresh Watermelon"
     },
@@ -62,7 +62,7 @@
       "Id": 3,
       "ImagePath": "berry",
       "LocationId": 1,
-      "Price": 6.0,
+      "Price": 2.0,
       "Star": 4.8,
       "Title": "Fresh Berry"
     },
@@ -73,7 +73,7 @@
       "Id": 4,
       "ImagePath": "pineaplle",
       "LocationId": 1,
-      "Price": 10,
+      "Price": 4.0,
       "Star": 4.4,
       "Title": "Fresh Pineapple"
     },
@@ -84,7 +84,7 @@
       "Id": 5,
       "ImagePath": "strawberry",
       "LocationId": 1,
-      "Price": 12,
+      "Price": 1.5,
       "Star": 4.8,
       "Title": "Fresh Strawberry"
     }

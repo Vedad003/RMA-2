@@ -49,6 +49,6 @@ public class CartActivity extends AppCompatActivity {
         for (ItemModel item : cartList) {
             total += item.getPrice();
         }
-        totalPriceTextView.setText(String.format("$%.2f", total));
+        totalPriceTextView.setText(String.format("%.2f KM", total));
     }
 }

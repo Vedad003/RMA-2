@@ -44,7 +44,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         title.setText(t);
 
-        price.setText(String.format("$%.2f", p));
+        price.setText(String.format("%.2f KM", p));
 
         description.setText(d);
 

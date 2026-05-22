@@ -60,7 +60,7 @@ public class ProductAdapter
 
         holder.title.setText(item.getTitle());
 
-        holder.price.setText(String.format("$%.2f", item.getPrice()));
+        holder.price.setText(String.format("%.2f KM", item.getPrice()));
 
         holder.category.setText(
                 getCategoryName(item.getCategoryId()));
