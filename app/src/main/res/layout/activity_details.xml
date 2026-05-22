@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F5F5F5">
+    android:background="#F8F9FA">
 
+    <!-- Čistiji, niži Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="56dp"
         android:background="#4CAF50"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
         app:titleTextColor="@android:color/white"
-        android:contentInsetStartWithNavigation="8dp"/>
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,14 +24,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="20dp">
 
+            <!-- Velika, moderna prezentacijska kartica za sliku -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="6dp">
+                android:layout_height="280dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp">
 
                 <ImageView
                     android:id="@+id/detailImage"
@@ -43,42 +42,65 @@
 
             </androidx.cardview.widget.CardView>
 
+            <!-- Naslov artikla -->
             <TextView
                 android:id="@+id/detailTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
+                android:textSize="26sp"
                 android:textStyle="bold"
-                android:textColor="#222222"/>
+                android:textColor="#212121"/>
 
+            <!-- Cijena proizvoda -->
             <TextView
                 android:id="@+id/detailPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:textSize="22sp"
                 android:textColor="#2E7D32"
                 android:textStyle="bold"
-                android:layout_marginTop="6dp"/>
+                android:layout_marginTop="8dp"/>
+
+            <!-- Potpuno ispravljena linija razdjelnica bez pogrešnih atributa -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"/>
 
             <TextView
-                android:id="@+id/detailDescription"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About this product"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#757575"
+                android:textAllCaps="true"/>
+
+            <!-- Opis proizvoda -->
+            <TextView
+                android:id="@+id/detailDescription"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:textColor="#555555"
-                android:layout_marginTop="12dp"/>
+                android:layout_marginTop="8dp"
+                android:lineSpacingMultiplier="1.2"/>
 
-            <Button
-                android:id="@+id/btnAddToCart"
+            <!-- Gumb "Add To Cart" odmah ispod opisa -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addToCartButton"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Add to cart"
+                android:layout_height="54dp"
+                android:layout_marginTop="24dp"
+                android:text="Add To Cart"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#4CAF50"
-                android:layout_marginTop="20dp"/>
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:background="#4CAF50"/>
 
         </LinearLayout>
-
     </ScrollView>
 
 </LinearLayout>
