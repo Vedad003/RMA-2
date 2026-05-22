@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F8F9FA"> <!-- Svjetlija, modernija sivo-bijela pozadina -->
+    android:background="#F8F9FA">
 
-    <!-- Gornji dio s pretragom i korpom -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +16,6 @@
         android:paddingBottom="12dp"
         android:gravity="center_vertical">
 
-        <!-- Moderna traka za pretraživanje unutar tanke kartice -->
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="50dp"
@@ -42,7 +40,6 @@
                 android:inputType="text"/>
         </androidx.cardview.widget.CardView>
 
-        <!-- Kružni, moderni gumb za korpu -->
         <androidx.cardview.widget.CardView
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -64,7 +61,6 @@
 
     </LinearLayout>
 
-    <!-- Lista proizvoda s blagim odmakom od rubova -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"

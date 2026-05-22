@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Slika artikla sa zaobljenim gornjim rubovima -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="140dp"
@@ -38,7 +37,6 @@
             android:paddingBottom="14dp"
             android:paddingTop="6dp">
 
-            <!-- Naziv proizvoda -->
             <TextView
                 android:id="@+id/productTitle"
                 android:layout_width="match_parent"
@@ -49,7 +47,6 @@
                 android:maxLines="1"
                 android:ellipsize="end"/>
 
-            <!-- Oznaka kategorije s modernom prozirnom zelenom pozadinom -->
             <TextView
                 android:id="@+id/productCategory"
                 android:layout_width="wrap_content"
@@ -62,7 +59,6 @@
                 android:layout_marginTop="6dp"
                 android:textStyle="bold"/>
 
-            <!-- Cijena pozicionirana skroz desno/dolje u redoslijedu -->
             <TextView
                 android:id="@+id/productPrice"
                 android:layout_width="wrap_content"

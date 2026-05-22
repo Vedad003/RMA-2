@@ -20,7 +20,6 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        // Ako aplikacija ima stari ugrađeni ActionBar u temi, sakrivamo ga da ne blokira dodir
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -28,10 +27,8 @@ public class DetailsActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Product details");
 
-        // Ručno postavljamo standardnu ikonu za nazad iz Android sustava
         toolbar.setNavigationIcon(androidx.appcompat.R.drawable.abc_ic_ab_back_material);
 
-        // DIREKTAN KLIK: Ovo rješava problem jer klik sluša izravno element unutar našeg zelenog toolbara
         toolbar.setNavigationOnClickListener(v -> finish());
 
         image = findViewById(R.id.detailImage);
@@ -47,7 +44,6 @@ public class DetailsActivity extends AppCompatActivity {
 
         title.setText(t);
 
-        // ISPRAVLJENO: Cijena je sada formatirana na dvije decimale
         price.setText(String.format("$%.2f", p));
 
         description.setText(d);

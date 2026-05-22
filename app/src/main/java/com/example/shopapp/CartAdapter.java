@@ -16,16 +16,21 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     Context context;
     ArrayList<ItemModel> cartList;
+    OnCartItemClickListener listener;
 
-    public CartAdapter(Context context, ArrayList<ItemModel> cartList) {
+    public interface OnCartItemClickListener {
+        void onItemClick(ItemModel item, int position);
+    }
+
+    public CartAdapter(Context context, ArrayList<ItemModel> cartList, OnCartItemClickListener listener) {
         this.context = context;
         this.cartList = cartList;
+        this.listener = listener;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // ISPRAVLJENO: Koristi se item_cart umjesto item_product
         View view = LayoutInflater.from(context)
                 .inflate(R.layout.item_cart, parent, false);
         return new ViewHolder(view);
@@ -44,6 +49,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                 context.getPackageName()
         );
         holder.image.setImageResource(imageRes);
+
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(item, holder.getAdapterPosition());
+            }
+        });
     }
 
     @Override
@@ -57,7 +68,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            // ISPRAVLJENO: Vežemo se na ID-ove koji stvarno postoje u item_cart.xml
             image = itemView.findViewById(R.id.cartImage);
             title = itemView.findViewById(R.id.cartTitle);
             price = itemView.findViewById(R.id.cartPrice);

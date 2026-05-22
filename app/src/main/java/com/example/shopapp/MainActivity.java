@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     EditText searchBar;
-    ImageButton cartButton; // Promijenjeno u ImageButton
+    ImageButton cartButton;
 
     ArrayList<ItemModel> itemList;
     ArrayList<ItemModel> filteredList;
@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setAdapter(adapter);
 
-        // Otvaranje korpe na klik gumba
         cartButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, CartActivity.class);
             startActivity(intent);
