@@ -56,7 +56,9 @@ public class DetailsActivity extends AppCompatActivity {
         image.setImageResource(resId);
 
         addToCart.setOnClickListener(v -> {
+            Toast.makeText(this, "Kliknuto na dugme!", Toast.LENGTH_SHORT).show();
             ItemModel item = new ItemModel();
+            item.setId("temp_id");
             item.setTitle(t);
             item.setPrice(p);
             item.setDescription(d);

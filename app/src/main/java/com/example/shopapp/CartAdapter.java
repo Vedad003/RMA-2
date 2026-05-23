@@ -52,14 +52,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) {
-                listener.onItemClick(item, holder.getAdapterPosition());
+                listener.onItemClick(item, holder.getBindingAdapterPosition());
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return cartList.size();
+        return cartList != null ? cartList.size() : 0;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

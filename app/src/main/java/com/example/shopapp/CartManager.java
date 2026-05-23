@@ -1,31 +1,59 @@
 package com.example.shopapp;
 
-import java.util.ArrayList;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class CartManager {
 
-    private static ArrayList<ItemModel> cartItems =
-            new ArrayList<>();
+    private static DatabaseReference getUserCartRef() {
+
+        String uid = FirebaseAuth.getInstance()
+                .getCurrentUser()
+                .getUid();
+
+        String databaseUrl = "https://shopapp-40eb7-default-rtdb.europe-west1.firebasedatabase.app/";
+
+        return FirebaseDatabase
+                .getInstance(databaseUrl)
+                .getReference()
+                .child("Carts")
+                .child(uid);
+    }
 
     public static void addToCart(ItemModel item) {
 
-        cartItems.add(item);
+        DatabaseReference cartRef = getUserCartRef();
+
+        String itemId = cartRef.push().getKey();
+
+        if (itemId != null) {
+
+            item.setId(itemId);
+
+            cartRef.child(itemId).setValue(item);
+        }
     }
 
-    public static ArrayList<ItemModel> getCartItems() {
+    public static void getCartItems(ValueEventListener listener) {
 
-        return cartItems;
+        getUserCartRef().addValueEventListener(listener);
     }
 
     public static void removeItem(ItemModel item) {
 
-        cartItems.remove(item);
+        if (item.getId() != null) {
+
+            getUserCartRef()
+                    .child(item.getId())
+                    .removeValue();
+        }
     }
 
     public static void clearCart() {
 
-        cartItems.clear();
+        getUserCartRef().removeValue();
     }
 
-    
 }

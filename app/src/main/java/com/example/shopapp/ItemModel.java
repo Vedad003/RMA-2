@@ -2,7 +2,7 @@ package com.example.shopapp;
 
 public class ItemModel {
 
-    int id;
+    String id;
     int categoryId;
 
     String title;
@@ -11,11 +11,15 @@ public class ItemModel {
 
     double price;
 
-    public int getId() {
+    public ItemModel(){
+
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

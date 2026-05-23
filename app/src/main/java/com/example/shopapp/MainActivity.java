@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < itemArray.length(); i++) {
                 JSONObject itemObject = itemArray.getJSONObject(i);
                 ItemModel item = new ItemModel();
-                item.setId(itemObject.getInt("Id"));
+                item.setId(itemObject.getString("Id"));
                 item.setTitle(itemObject.getString("Title"));
                 item.setPrice(itemObject.getDouble("Price"));
                 item.setImagePath(itemObject.getString("ImagePath"));
